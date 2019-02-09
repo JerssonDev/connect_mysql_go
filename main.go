@@ -17,7 +17,7 @@ type Persona struct {
 
 func main() {
 
-	db, err := gorm.Open("mysql", "user:password@/godatabase?charset=utf8mb4&parseTime=True&loc=Local")
+	db, err := gorm.Open("mysql", "user:password@/database?charset=utf8mb4&parseTime=True&loc=Local")
 
 	if err != nil {
 		panic("Error al conectarse a la base de datos :( " + err.Error())
@@ -31,7 +31,7 @@ func main() {
 
 	fmt.Println("Tabla creada correctamente :) ")
 
-	var p *Persona = &Persona{}
+	p := &Persona{}
 
 	p.Nombre = "Juanito"
 	p.Edad = 20
